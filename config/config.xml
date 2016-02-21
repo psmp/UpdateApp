@@ -2,6 +2,7 @@
 <empresas>
 	<empresa>
 		<nome>STAC</nome>
+		<numero>140</numero>
 		<ftp>
 			<server>localhost</server>
 			<port>21</port>
@@ -10,7 +11,36 @@
 		</ftp>
 		<applications>
 			<compact>
-				<dutyplan></dutyplan>
+				<dutyplan>/home/psmp/Desktop/ftp/</dutyplan>
+				<passesbusiness></passesbusiness>
+				<xmlbinary></xmlbinary>
+			</compact>
+			<place>
+				<leitora></leitora>
+			</place>
+			<reflex>
+				<dcar></dcar>
+				<reflexINI></reflexINI>
+				<tube></tube>
+			</reflex>
+			<mobileReflex>
+				<mR></mR>
+				<webservice></webservice>
+			</mobileReflex>
+		</applications>
+	</empresa>
+	<empresa>
+		<nome>2STAC</nome>
+		<numero>141</numero>
+		<ftp>
+			<server>localhost</server>
+			<port>21</port>
+			<username>psmp</username>
+			<password>03081981</password>
+		</ftp>
+		<applications>
+			<compact>
+				<dutyplan>/home/psmp/Desktop/ftp/</dutyplan>
 				<passesbusiness></passesbusiness>
 				<xmlbinary></xmlbinary>
 			</compact>
