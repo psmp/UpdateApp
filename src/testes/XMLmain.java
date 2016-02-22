@@ -79,6 +79,18 @@ public class XMLmain {
             ArrayList<Empresa> listaEmpresa = new ArrayList<Empresa>();
             listaEmpresa = xmlm.loadConfig(doc);
             
+            System.out.println("Num Elementos: " + listaEmpresa.size());
+            
+            for (Empresa emp : listaEmpresa) {
+                System.out.println("Nome das empresa: " + emp.getName());
+            }
+            
+//            for (int i=0; i<listaEmpresa.size(); i++) {
+//                Empresa e = listaEmpresa.get(i);
+//                System.out.println("Empresa: " + e.getName());
+//                System.out.println("Numero: " + e.getEnterprise());
+//            }
+            
         } catch (IOException ex) {
             Logger.getLogger(XMLmain.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {

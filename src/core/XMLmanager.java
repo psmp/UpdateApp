@@ -43,9 +43,10 @@ public class XMLmanager {
         // Empresa
         NodeList nListEmpr = doc.getElementsByTagName("empresa");
         Lempr = new ArrayList<Empresa>();
-        empr = new Empresa();
+       
         System.out.println("----------------------------");
         for (int temp = 0; temp < nListEmpr.getLength(); temp++) {
+            empr = new Empresa();
             Node nNode = nListEmpr.item(temp);
             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
@@ -123,9 +124,10 @@ public class XMLmanager {
                     }
                     break;
                 }
+                Lempr.add(empr);
+                System.out.println("----------------------------");
             }
-            System.out.println("----------------------------");
-            Lempr.add(empr);
+            
         }
         return Lempr;
     }

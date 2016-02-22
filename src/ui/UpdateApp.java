@@ -6,6 +6,7 @@
 package ui;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,22 +36,13 @@ public class UpdateApp extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPane = new javax.swing.JDesktopPane();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        label_Server = new javax.swing.JLabel();
-        lablel_Port = new javax.swing.JLabel();
-        label_Username = new javax.swing.JLabel();
-        label_Password = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        logFTP = new javax.swing.JTextArea();
-        jB_Connect = new javax.swing.JButton();
-        jB_Download = new javax.swing.JButton();
-        jB_Disconnect = new javax.swing.JButton();
-        text_Password = new javax.swing.JTextField();
-        text_Username = new javax.swing.JTextField();
-        text_Port = new javax.swing.JTextField();
-        text_Server = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        JIFlogin = new javax.swing.JInternalFrame();
+        JLpassword = new javax.swing.JLabel();
+        jLusername = new javax.swing.JLabel();
+        jTusername = new javax.swing.JTextField();
+        jPassword = new javax.swing.JPasswordField();
+        jBlogin = new javax.swing.JButton();
+        jBcancel = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         openMenuItem = new javax.swing.JMenuItem();
@@ -68,143 +60,78 @@ public class UpdateApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jInternalFrame1.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        jInternalFrame1.setMaximizable(true);
-        jInternalFrame1.setTitle("Actualização");
-        jInternalFrame1.setVisible(false);
+        JIFlogin.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
+        JIFlogin.setMaximizable(true);
+        JIFlogin.setTitle("Actualização");
+        JIFlogin.setVisible(true);
 
-        label_Server.setText("Server");
+        JLpassword.setText("Password");
 
-        lablel_Port.setText("Port");
+        jLusername.setText("Username");
 
-        label_Username.setText("Username");
-
-        label_Password.setText("Password");
-
-        logFTP.setColumns(20);
-        logFTP.setRows(5);
-        jScrollPane1.setViewportView(logFTP);
-
-        jB_Connect.setText("Connect");
-        jB_Connect.addActionListener(new java.awt.event.ActionListener() {
+        jTusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_ConnectActionPerformed(evt);
+                jTusernameActionPerformed(evt);
             }
         });
 
-        jB_Download.setText("Download");
-        jB_Download.addActionListener(new java.awt.event.ActionListener() {
+        jBlogin.setText("Login");
+        jBlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_DownloadActionPerformed(evt);
+                jBloginActionPerformed(evt);
             }
         });
 
-        jB_Disconnect.setText("Disconnect");
-        jB_Disconnect.addActionListener(new java.awt.event.ActionListener() {
+        jBcancel.setText("Cancel");
+        jBcancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_DisconnectActionPerformed(evt);
+                jBcancelActionPerformed(evt);
             }
         });
 
-        text_Password.setText("03081981");
-        text_Password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
-        text_Username.setText("psmp");
-
-        text_Port.setText("21");
-
-        text_Server.setText("localhost");
-        text_Server.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        text_Server.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                text_ServerActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Close");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton3.setText("new frame");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 526, Short.MAX_VALUE)
-                    .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addComponent(label_Password)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(text_Password, javax.swing.GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-                            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_Username)
-                                    .addComponent(lablel_Port)
-                                    .addComponent(label_Server))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(text_Server, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                                    .addComponent(text_Port)
-                                    .addComponent(text_Username))))
+        javax.swing.GroupLayout JIFloginLayout = new javax.swing.GroupLayout(JIFlogin.getContentPane());
+        JIFlogin.getContentPane().setLayout(JIFloginLayout);
+        JIFloginLayout.setHorizontalGroup(
+            JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JIFloginLayout.createSequentialGroup()
+                .addContainerGap(178, Short.MAX_VALUE)
+                .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(JIFloginLayout.createSequentialGroup()
+                        .addComponent(jBlogin)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jB_Disconnect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jB_Download, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jB_Connect, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                        .addComponent(jBcancel))
+                    .addGroup(JIFloginLayout.createSequentialGroup()
+                        .addComponent(jLusername)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTusername))
+                    .addGroup(JIFloginLayout.createSequentialGroup()
+                        .addComponent(JLpassword)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPassword)))
+                .addGap(212, 212, 212))
         );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(label_Server)
-                        .addComponent(text_Server, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lablel_Port)
-                    .addComponent(text_Port, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_Username)
-                    .addComponent(text_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(label_Password)
-                    .addComponent(text_Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jB_Connect)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jB_Download)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jB_Disconnect)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        JIFloginLayout.setVerticalGroup(
+            JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JIFloginLayout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLusername)
+                    .addComponent(jTusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JLpassword)
+                    .addComponent(jPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBlogin)
+                    .addComponent(jBcancel))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
 
-        desktopPane.add(jInternalFrame1);
-        jInternalFrame1.setBounds(0, 0, 560, 360);
+        desktopPane.add(JIFlogin);
+        JIFlogin.setBounds(0, 0, 560, 360);
         try {
-            jInternalFrame1.setMaximum(true);
+            JIFlogin.setMaximum(true);
         } catch (java.beans.PropertyVetoException e1) {
             e1.printStackTrace();
         }
@@ -300,52 +227,9 @@ public class UpdateApp extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    private void jB_ConnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_ConnectActionPerformed
-        // TODO add your handling code here:
-        FTPui objFTP = new FTPui();
-        resultado = objFTP.connect(text_Server.getText(), Integer.parseInt(text_Port.getText()), text_Username.getText(), text_Password.getText());
-        if (resultado != null) {
-            logFTP.append(resultado + "\n");
-            objFTP2=objFTP;
-        }
-        else {
-            logFTP.append("Server not available" + "\n");
-        }
-    }//GEN-LAST:event_jB_ConnectActionPerformed
-
-    private void text_ServerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text_ServerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_text_ServerActionPerformed
-
-    private void jB_DisconnectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_DisconnectActionPerformed
-        // TODO add your handling code here:
-        if (objFTP2 != null) {
-            resultado = objFTP2.disconnect();
-            logFTP.append(resultado + "\n");
-        }
-        else {
-            logFTP.append("Not connected" + "\n");
-        }
-    }//GEN-LAST:event_jB_DisconnectActionPerformed
-
-    private void jB_DownloadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_DownloadActionPerformed
-        // TODO add your handling code here:
-        Random rand = new Random();
-        int  n = rand.nextInt(50) + 1;
-        
-        String dst = "/home/psmp/Desktop/ftp/" + "teste" + Integer.toString(n) + ".txt";
-        if (objFTP2 != null) {
-            resultado = objFTP2.updateCompact("ftp/teste.txt", dst);
-            logFTP.append(resultado + "\n");
-        }
-        else {
-            logFTP.append("Not Connected!" + "\n");
-        }
-    }//GEN-LAST:event_jB_DownloadActionPerformed
-
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
-        jInternalFrame1.setVisible(true);
+        JIFlogin.setVisible(true);
     }//GEN-LAST:event_openMenuItemActionPerformed
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
@@ -355,14 +239,37 @@ public class UpdateApp extends javax.swing.JFrame {
         config.setVisible(true);
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jTusernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTusernameActionPerformed
         // TODO add your handling code here:
-        jInternalFrame1.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jTusernameActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jBloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBloginActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+        String strPass = new String(jPassword.getPassword()).trim();
+        System.out.println("username: " + jTusername.getText());
+        System.out.println("password: " + strPass);
+        // Abrir nova janela Config
+        if (jTusername.getText().equals(new String ("root"))) {
+            if (strPass.equals(new String ("12345"))) {
+                JOptionPane.showMessageDialog(null,"Login OK", "Login", JOptionPane.WARNING_MESSAGE);
+                ConfigXML config = new ConfigXML();
+                this.desktopPane.add(config);
+                config.setMaximizable(true);
+                config.setVisible(true);
+                // Ocultar janela actual. Abrir nova janela.
+                this.JIFlogin.setVisible(false);
+            }
+        }
+        else {
+            JOptionPane.showMessageDialog(null,"Username or Password invalid", "Login", JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_jBloginActionPerformed
+
+    private void jBcancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBcancelActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jBcancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -401,6 +308,8 @@ public class UpdateApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JInternalFrame JIFlogin;
+    private javax.swing.JLabel JLpassword;
     private javax.swing.JMenuItem aboutMenuItem;
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
@@ -411,27 +320,16 @@ public class UpdateApp extends javax.swing.JFrame {
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JButton jB_Connect;
-    private javax.swing.JButton jB_Disconnect;
-    private javax.swing.JButton jB_Download;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel label_Password;
-    private javax.swing.JLabel label_Server;
-    private javax.swing.JLabel label_Username;
-    private javax.swing.JLabel lablel_Port;
-    private javax.swing.JTextArea logFTP;
+    private javax.swing.JButton jBcancel;
+    private javax.swing.JButton jBlogin;
+    private javax.swing.JLabel jLusername;
+    private javax.swing.JPasswordField jPassword;
+    private javax.swing.JTextField jTusername;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTextField text_Password;
-    private javax.swing.JTextField text_Port;
-    private javax.swing.JTextField text_Server;
-    private javax.swing.JTextField text_Username;
     // End of variables declaration//GEN-END:variables
 
 }
