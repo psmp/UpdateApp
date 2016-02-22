@@ -23,6 +23,8 @@ public class UpdateApp extends javax.swing.JFrame {
     public UpdateApp() {
         
         initComponents();
+        this.jTusername.setText("root");
+        this.jPassword.setText("12345");
         
     }
 
@@ -60,9 +62,8 @@ public class UpdateApp extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        JIFlogin.setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        JIFlogin.setMaximizable(true);
-        JIFlogin.setTitle("Actualização");
+        JIFlogin.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        JIFlogin.setTitle("Login");
         JIFlogin.setVisible(true);
 
         JLpassword.setText("Password");
@@ -72,6 +73,15 @@ public class UpdateApp extends javax.swing.JFrame {
         jTusername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTusernameActionPerformed(evt);
+            }
+        });
+
+        jPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jPasswordKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jPasswordKeyReleased(evt);
             }
         });
 
@@ -108,12 +118,12 @@ public class UpdateApp extends javax.swing.JFrame {
                         .addComponent(JLpassword)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPassword)))
-                .addGap(212, 212, 212))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         JIFloginLayout.setVerticalGroup(
             JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JIFloginLayout.createSequentialGroup()
-                .addGap(103, 103, 103)
+                .addContainerGap(103, Short.MAX_VALUE)
                 .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLusername)
                     .addComponent(jTusername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -125,7 +135,7 @@ public class UpdateApp extends javax.swing.JFrame {
                 .addGroup(JIFloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBlogin)
                     .addComponent(jBcancel))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         desktopPane.add(JIFlogin);
@@ -251,7 +261,6 @@ public class UpdateApp extends javax.swing.JFrame {
         // Abrir nova janela Config
         if (jTusername.getText().equals(new String ("root"))) {
             if (strPass.equals(new String ("12345"))) {
-                JOptionPane.showMessageDialog(null,"Login OK", "Login", JOptionPane.WARNING_MESSAGE);
                 ConfigXML config = new ConfigXML();
                 this.desktopPane.add(config);
                 config.setMaximizable(true);
@@ -270,6 +279,36 @@ public class UpdateApp extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jBcancelActionPerformed
+
+    private void jPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPasswordKeyReleased
+
+    private void jPasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordKeyPressed
+        // TODO add your handling code here:
+        if (evt.getKeyCode()==10) {
+            String strPass = new String(jPassword.getPassword()).trim();
+            System.out.println("username: " + jTusername.getText());
+            System.out.println("password: " + strPass);
+            // Abrir nova janela Config
+            if (jTusername.getText().equals(new String ("root"))) {
+                if (strPass.equals(new String ("12345"))) {
+                    ConfigXML config = new ConfigXML();
+                    this.desktopPane.add(config);
+                    config.setMaximizable(true);
+                    config.setVisible(true);
+                    // Ocultar janela actual. Abrir nova janela.
+                    this.JIFlogin.setVisible(false);
+                }
+            }
+            else {
+                JOptionPane.showMessageDialog(null,"Username or Password invalid", "Login", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
+        System.out.println("Pressed key: " + evt.getKeyChar() + " code: " + evt.getKeyCode());
+        
+    }//GEN-LAST:event_jPasswordKeyPressed
 
     /**
      * @param args the command line arguments

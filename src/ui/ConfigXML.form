@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="0"/>
+    <Property name="maximizable" type="boolean" value="true"/>
+    <Property name="name" type="java.lang.String" value="Config" noResource="true"/>
+  </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
@@ -23,32 +28,33 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton5" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jButton7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jButton6" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Component id="jButton9" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton10" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="0" pref="19" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
                       <Component id="jButton2" min="-2" pref="93" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="93" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="JCempresas" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jB_setCompany" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="323" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jB_tube" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jB_compact" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jB_place" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jB_reflex" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jB_mobileReflex" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jL_compact" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Component id="jL_reflex" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Component id="jL_mobileReflex" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Component id="jL_tube" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Component id="jL_place" min="-2" pref="186" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -58,24 +64,39 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="JCempresas" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jB_setCompany" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jB_compact" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_compact" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton10" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="76" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jB_place" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_place" min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jB_reflex" min="-2" max="-2" attributes="0"/>
+                          <Component id="jL_reflex" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jB_tube" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jL_tube" min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="jB_mobileReflex" min="-2" max="-2" attributes="0"/>
+                  <Component id="jL_mobileReflex" min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="72" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -102,45 +123,63 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JComboBox" name="JCempresas">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="1">
+            <StringItem index="0" value="Select Company"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JCempresasActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_setCompany">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Set"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_setCompanyActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_compact">
       <Properties>
         <Property name="text" type="java.lang.String" value="Compact"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jB_compactActionPerformed"/>
+      </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="jB_place">
       <Properties>
         <Property name="text" type="java.lang.String" value="Place"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="jB_reflex">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reflex"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jB_mobileReflex">
       <Properties>
         <Property name="text" type="java.lang.String" value="mobileReflex"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton6">
+    <Component class="javax.swing.JButton" name="jB_tube">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Webservice"/>
+        <Property name="text" type="java.lang.String" value="Tube"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton7">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Webservice"/>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="jL_compact">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton8">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Software"/>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="jL_reflex">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton9">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Reflex (dcar)"/>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="jL_place">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton10">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Reflex (ReflexINI)"/>
-      </Properties>
+    <Component class="javax.swing.JLabel" name="jL_mobileReflex">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jL_tube">
     </Component>
   </SubComponents>
 </Form>

@@ -5,21 +5,49 @@
  */
 package ui;
 
+import core.Empresa;
+import core.XMLmanager;
 import java.beans.PropertyVetoException;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.xml.parsers.ParserConfigurationException;
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
 
 /**
  *
  * @author psmp
  */
 public class ConfigXML extends javax.swing.JInternalFrame {
+    ArrayList<Empresa> Lempresas = new ArrayList<Empresa>();
+    Empresa empresaSelected = new Empresa();
 
     /**
      * Creates new form ConfigXML
      */
     public ConfigXML() {
         initComponents();
+        try {
+            
+            XMLmanager configxml = new XMLmanager();
+            
+            Document doc;
+            doc = configxml.getConfig();
+            Lempresas = configxml.loadConfig(doc);
+            for (Empresa empresa : Lempresas) {
+                this.JCempresas.addItem(empresa.getName());
+            }
+ 
+            
+        } catch (IOException ex) {
+            Logger.getLogger(ConfigXML.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ParserConfigurationException ex) {
+            Logger.getLogger(ConfigXML.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SAXException ex) {
+            Logger.getLogger(ConfigXML.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -33,14 +61,22 @@ public class ConfigXML extends javax.swing.JInternalFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        JCempresas = new javax.swing.JComboBox();
+        jB_setCompany = new javax.swing.JButton();
+        jB_compact = new javax.swing.JButton();
+        jB_place = new javax.swing.JButton();
+        jB_reflex = new javax.swing.JButton();
+        jB_mobileReflex = new javax.swing.JButton();
+        jB_tube = new javax.swing.JButton();
+        jL_compact = new javax.swing.JLabel();
+        jL_reflex = new javax.swing.JLabel();
+        jL_place = new javax.swing.JLabel();
+        jL_mobileReflex = new javax.swing.JLabel();
+        jL_tube = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setMaximizable(true);
+        setName("Config"); // NOI18N
 
         jButton1.setText("Close");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -56,21 +92,34 @@ public class ConfigXML extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton3.setText("Compact");
+        JCempresas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select Company" }));
+        JCempresas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JCempresasActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Place");
+        jB_setCompany.setText("Set");
+        jB_setCompany.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_setCompanyActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("mobileReflex");
+        jB_compact.setText("Compact");
+        jB_compact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_compactActionPerformed(evt);
+            }
+        });
 
-        jButton6.setText("Webservice");
+        jB_place.setText("Place");
 
-        jButton7.setText("Webservice");
+        jB_reflex.setText("Reflex");
 
-        jButton8.setText("Software");
+        jB_mobileReflex.setText("mobileReflex");
 
-        jButton9.setText("Reflex (dcar)");
-
-        jButton10.setText("Reflex (ReflexINI)");
+        jB_tube.setText("Tube");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -80,47 +129,60 @@ public class ConfigXML extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton7)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton6)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton8))))
-                            .addComponent(jButton9)
-                            .addComponent(jButton10))
-                        .addGap(0, 19, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(JCempresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jB_setCompany)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jB_tube, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_compact, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_place, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_reflex, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jB_mobileReflex, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jL_compact, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_reflex, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_mobileReflex, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_tube, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jL_place, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(JCempresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_setCompany))
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton9)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                    .addComponent(jB_compact)
+                    .addComponent(jL_compact, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jB_place)
+                    .addComponent(jL_place, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jB_reflex)
+                            .addComponent(jL_reflex, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jB_tube))
+                    .addComponent(jL_tube, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jB_mobileReflex)
+                    .addComponent(jL_mobileReflex, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -143,17 +205,53 @@ public class ConfigXML extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void JCempresasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JCempresasActionPerformed
+        // TODO add your handling code here:            
+    }//GEN-LAST:event_JCempresasActionPerformed
+
+    private void jB_setCompanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_setCompanyActionPerformed
+        // TODO add your handling code here:
+        String empresaName = (String) this.JCempresas.getSelectedItem();
+        if (!empresaName.equals("Select Company")) {
+            for (Empresa empresa : Lempresas) {
+                    if (empresa.getName().equals(empresaName)){
+                        empresaSelected = empresa;
+                    }
+
+            }
+
+            if (empresaSelected.getName() != null && !empresaSelected.getName().isEmpty()) {
+                System.out.println("Empresa selecionada");
+                System.out.println("Nome: " + empresaSelected.getName());
+                System.out.println("Numero: " + empresaSelected.getEnterprise());
+            }
+        }
+        else {System.out.println("Empresa NÃO selecionada");}
+        
+        
+
+    }//GEN-LAST:event_jB_setCompanyActionPerformed
+
+    private void jB_compactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_compactActionPerformed
+        // TODO add your handling code here:
+        this.jL_compact.setText(empresaSelected.getCompact());
+    }//GEN-LAST:event_jB_compactActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox JCempresas;
+    private javax.swing.JButton jB_compact;
+    private javax.swing.JButton jB_mobileReflex;
+    private javax.swing.JButton jB_place;
+    private javax.swing.JButton jB_reflex;
+    private javax.swing.JButton jB_setCompany;
+    private javax.swing.JButton jB_tube;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jL_compact;
+    private javax.swing.JLabel jL_mobileReflex;
+    private javax.swing.JLabel jL_place;
+    private javax.swing.JLabel jL_reflex;
+    private javax.swing.JLabel jL_tube;
     // End of variables declaration//GEN-END:variables
 }
