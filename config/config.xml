@@ -11,7 +11,7 @@
 		</ftp>
 		<applications>
 			<compact>
-				<dutyplan>/home/psmp/Desktop/ftp/</dutyplan>
+				<dutyplan>/home/ami/NetBeansProjects/UpdateApp/temp/</dutyplan>
 				<passesbusiness></passesbusiness>
 				<xmlbinary></xmlbinary>
 			</compact>

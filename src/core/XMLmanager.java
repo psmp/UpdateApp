@@ -39,21 +39,21 @@ public class XMLmanager {
     
     public ArrayList<Empresa> loadConfig(Document doc){
         doc.getDocumentElement().normalize();
-        System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+        //D:\Aplicativos\Datacar\BackOffice\Empr("Root element :" + doc.getDocumentElement().getNodeName());
         // Empresa
         NodeList nListEmpr = doc.getElementsByTagName("empresa");
         Lempr = new ArrayList<Empresa>();
        
-        System.out.println("----------------------------");
+        //D:\Aplicativos\Datacar\BackOffice\Empr("----------------------------");
         for (int temp = 0; temp < nListEmpr.getLength(); temp++) {
             empr = new Empresa();
             Node nNode = nListEmpr.item(temp);
             if (nNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element eElement = (Element) nNode;
                 empr.setName(eElement.getElementsByTagName("nome").item(0).getTextContent());
-                System.out.println("nome : " + eElement.getElementsByTagName("nome").item(0).getTextContent());
+                //D:\Aplicativos\Datacar\BackOffice\Empr("nome : " + eElement.getElementsByTagName("nome").item(0).getTextContent());
                 empr.setEnterprise(Integer.parseInt(eElement.getElementsByTagName("numero").item(0).getTextContent()));
-                System.out.println("numero : " + eElement.getElementsByTagName("numero").item(0).getTextContent());
+                //D:\Aplicativos\Datacar\BackOffice\Empr("numero : " + eElement.getElementsByTagName("numero").item(0).getTextContent());
                 // FTP
                 NodeList nListFTP = doc.getElementsByTagName("ftp");
                 for (int tempFTP = 0; tempFTP < nListFTP.getLength(); tempFTP++) {
@@ -61,13 +61,13 @@ public class XMLmanager {
                     if (nNodeFTP.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElementFTP = (Element) nNodeFTP;
                         empr.setFtpServer(eElementFTP.getElementsByTagName("server").item(0).getTextContent());
-                        System.out.println("Server : " + eElementFTP.getElementsByTagName("server").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Server : " + eElementFTP.getElementsByTagName("server").item(0).getTextContent());
                         empr.setFtpPort(Integer.parseInt(eElementFTP.getElementsByTagName("port").item(0).getTextContent()));
-                        System.out.println("Port : " + eElementFTP.getElementsByTagName("port").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Port : " + eElementFTP.getElementsByTagName("port").item(0).getTextContent());
                         empr.setFtpUsername(eElementFTP.getElementsByTagName("username").item(0).getTextContent());
-                        System.out.println("Username : " + eElementFTP.getElementsByTagName("username").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Username : " + eElementFTP.getElementsByTagName("username").item(0).getTextContent());
                         empr.setFtpPassword(eElementFTP.getElementsByTagName("password").item(0).getTextContent());
-                        System.out.println("Password : " + eElementFTP.getElementsByTagName("password").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Password : " + eElementFTP.getElementsByTagName("password").item(0).getTextContent());
                     }
                     break;
                 }
@@ -78,11 +78,11 @@ public class XMLmanager {
                     if (nNodeCompact.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElementCompact = (Element) nNode;
                         empr.setCompact(eElementCompact.getElementsByTagName("dutyplan").item(0).getTextContent());
-                        System.out.println("Dutyplan : " + eElementCompact.getElementsByTagName("dutyplan").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Dutyplan : " + eElementCompact.getElementsByTagName("dutyplan").item(0).getTextContent());
                         empr.setPassesBusiness(eElementCompact.getElementsByTagName("passesbusiness").item(0).getTextContent());
-                        System.out.println("PassesBusiness : " + eElementCompact.getElementsByTagName("passesbusiness").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("PassesBusiness : " + eElementCompact.getElementsByTagName("passesbusiness").item(0).getTextContent());
                         empr.setXmlBynary(eElementCompact.getElementsByTagName("xmlbinary").item(0).getTextContent());
-                        System.out.println("XMLtoBinary : " + eElementCompact.getElementsByTagName("xmlbinary").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("XMLtoBinary : " + eElementCompact.getElementsByTagName("xmlbinary").item(0).getTextContent());
                     }
                     break;
                 }
@@ -93,7 +93,7 @@ public class XMLmanager {
                     if (nNodePlace.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElementPlace = (Element) nNode;
                         empr.setPlace(eElementPlace.getElementsByTagName("leitora").item(0).getTextContent());
-                        System.out.println("Leitora : " + eElementPlace.getElementsByTagName("leitora").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Leitora : " + eElementPlace.getElementsByTagName("leitora").item(0).getTextContent());
                     }
                     break;
                 }
@@ -104,11 +104,11 @@ public class XMLmanager {
                     if (nNodeReflex.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElementReflex = (Element) nNode;
                         empr.setDcar(eElementReflex.getElementsByTagName("dcar").item(0).getTextContent());
-                        System.out.println("Dcar : " + eElementReflex.getElementsByTagName("dcar").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("Dcar : " + eElementReflex.getElementsByTagName("dcar").item(0).getTextContent());
                         empr.setReflexINI(eElementReflex.getElementsByTagName("reflexINI").item(0).getTextContent());
-                        System.out.println("reflexINI : " + eElementReflex.getElementsByTagName("reflexINI").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("reflexINI : " + eElementReflex.getElementsByTagName("reflexINI").item(0).getTextContent());
                         empr.setTube(eElementReflex.getElementsByTagName("tube").item(0).getTextContent());
-                        System.out.println("tube : " + eElementReflex.getElementsByTagName("tube").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("tube : " + eElementReflex.getElementsByTagName("tube").item(0).getTextContent());
                     }
                 }
                 // mobileReflex
@@ -118,14 +118,14 @@ public class XMLmanager {
                     if (nNodemR.getNodeType() == Node.ELEMENT_NODE) {
                         Element eElementmR = (Element) nNode;
                         empr.setMobileReflex(eElementmR.getElementsByTagName("mR").item(0).getTextContent());
-                        System.out.println("mR : " + eElementmR.getElementsByTagName("mR").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("mR : " + eElementmR.getElementsByTagName("mR").item(0).getTextContent());
                         empr.setMobileReflex_ws(eElementmR.getElementsByTagName("webservice").item(0).getTextContent());
-                        System.out.println("webservice : " + eElementmR.getElementsByTagName("webservice").item(0).getTextContent());
+                        //D:\Aplicativos\Datacar\BackOffice\Empr("webservice : " + eElementmR.getElementsByTagName("webservice").item(0).getTextContent());
                     }
                     break;
                 }
                 Lempr.add(empr);
-                System.out.println("----------------------------");
+                //D:\Aplicativos\Datacar\BackOffice\Empr("----------------------------");
             }
             
         }
