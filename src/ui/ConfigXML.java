@@ -30,7 +30,6 @@ public class ConfigXML extends javax.swing.JInternalFrame {
     public ConfigXML() {
         initComponents();
         try {
-            
             XMLmanager configxml = new XMLmanager();
             
             Document doc;
@@ -39,8 +38,6 @@ public class ConfigXML extends javax.swing.JInternalFrame {
             for (Empresa empresa : Lempresas) {
                 this.JCempresas.addItem(empresa.getName());
             }
- 
-            
         } catch (IOException ex) {
             Logger.getLogger(ConfigXML.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ParserConfigurationException ex) {
@@ -75,8 +72,10 @@ public class ConfigXML extends javax.swing.JInternalFrame {
         jL_tube = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
-        setMaximizable(true);
+        setTitle("Update Apps");
+        setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
         setName("Config"); // NOI18N
+        setVisible(true);
 
         jButton1.setText("Close");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -135,8 +134,7 @@ public class ConfigXML extends javax.swing.JInternalFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(JCempresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jB_setCompany)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jB_setCompany))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jB_tube, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

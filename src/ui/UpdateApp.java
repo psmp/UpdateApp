@@ -5,7 +5,10 @@
  */
 package ui;
 
+import java.beans.PropertyVetoException;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -264,6 +267,11 @@ public class UpdateApp extends javax.swing.JFrame {
                 ConfigXML config = new ConfigXML();
                 this.desktopPane.add(config);
                 config.setMaximizable(true);
+                try {
+                    config.setMaximum(rootPaneCheckingEnabled);
+                } catch (PropertyVetoException ex) {
+                    Logger.getLogger(UpdateApp.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 config.setVisible(true);
                 // Ocultar janela actual. Abrir nova janela.
                 this.JIFlogin.setVisible(false);
