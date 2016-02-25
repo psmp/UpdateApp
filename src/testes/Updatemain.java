@@ -29,7 +29,7 @@ public class Updatemain {
                 if (empresa.getName().equals("STAC")) {
                     System.out.println("Empresa: " + empresa.getName());
                     System.out.println("Compact: " + empresa.getCompact());
-                    if (procUpdate.validateUpdate(empresa, "compsact")) {
+                    if (procUpdate.validateUpdate(empresa, "compact")) {
                         System.out.println("Existe pasta");
                     }
                     else {System.out.println("Não existe pasta");}

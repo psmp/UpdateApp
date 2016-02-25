@@ -10,7 +10,7 @@ public class FTPmain {
 	/**
 	 * @param args
 	 */
-/*	public static void main(String[] args) {
+	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String server = "localhost";
 		int port = 21;
@@ -67,5 +67,4 @@ public class FTPmain {
 		System.out.println("Disconnected");
 		
 	}
-*/
 }

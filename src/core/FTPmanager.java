@@ -140,7 +140,7 @@ public class FTPmanager {
 	public boolean downloadFile (String filename, String dstfinal) {
             try {
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
-                boolean resultado;
+                boolean result;
 
                 OutputStream outputStream2 = new BufferedOutputStream(new FileOutputStream(dstfinal));
                 InputStream inputStream = ftp.retrieveFileStream(filename);
@@ -158,8 +158,8 @@ public class FTPmanager {
                     return false;
                 }
  
-            resultado = ftp.completePendingCommand();
-            if (resultado) {
+            result = ftp.completePendingCommand();
+            if (result) {
                 System.out.println("File " + filename + " has been downloaded successfully.");
             }
             outputStream2.close();
@@ -173,4 +173,13 @@ public class FTPmanager {
 		}
             return true;
 	}
+        
+        public boolean checkFileExists (String filePath) throws IOException {
+            InputStream inputStream = ftp.retrieveFileStream(filePath);
+            int returnCode = ftp.getReplyCode();
+            if (inputStream == null || returnCode == 550) {
+                return false;
+            }
+            return true;
+        }
 }
