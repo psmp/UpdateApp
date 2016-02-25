@@ -28,83 +28,71 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jButton2" min="-2" pref="93" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="93" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="JCempresas" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jB_setCompany" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="267" pref="309" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jB_tube" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jB_compact" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jB_place" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jB_reflex" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jB_mobileReflex" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jL_compact" min="-2" pref="186" max="-2" attributes="0"/>
-                          <Component id="jL_reflex" min="-2" pref="186" max="-2" attributes="0"/>
-                          <Component id="jL_mobileReflex" min="-2" pref="186" max="-2" attributes="0"/>
-                          <Component id="jL_tube" min="-2" pref="186" max="-2" attributes="0"/>
-                          <Component id="jL_place" min="-2" pref="186" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jButton2" min="-2" pref="93" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButton1" min="-2" pref="93" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jB_tube" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_compact" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_place" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_reflex" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jB_mobileReflex" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Component id="jPB_compact" max="32767" attributes="0"/>
+                              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" min="-2" pref="71" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="JCempresas" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jB_setCompany" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jPB_compact" max="32767" attributes="0"/>
+                  <Component id="jB_compact" max="32767" attributes="0"/>
+                  <Component id="jLabel2" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jB_place" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jB_reflex" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jB_tube" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+              <Component id="jB_mobileReflex" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jB_compact" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jL_compact" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jB_place" min="-2" max="-2" attributes="0"/>
-                  <Component id="jL_place" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jB_reflex" min="-2" max="-2" attributes="0"/>
-                          <Component id="jL_reflex" min="-2" pref="25" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jB_tube" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="jL_tube" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jB_mobileReflex" min="-2" max="-2" attributes="0"/>
-                  <Component id="jL_mobileReflex" min="-2" pref="25" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -174,15 +162,9 @@
         <Property name="text" type="java.lang.String" value="Tube"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jL_compact">
+    <Component class="javax.swing.JLabel" name="jLabel2">
     </Component>
-    <Component class="javax.swing.JLabel" name="jL_reflex">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jL_place">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jL_mobileReflex">
-    </Component>
-    <Component class="javax.swing.JLabel" name="jL_tube">
+    <Component class="javax.swing.JProgressBar" name="jPB_compact">
     </Component>
   </SubComponents>
 </Form>

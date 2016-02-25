@@ -12,8 +12,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JProgressBar;
+import ui.ConfigXML;
 
 
 /**
@@ -84,9 +87,12 @@ public class Update {
      * @param empresaUpdate
      * @return 
      */
-    public boolean updateCompact(Empresa empresaUpdate) {
+    public boolean updateCompact(Empresa empresaUpdate, JProgressBar progressBar) {
         boolean result = false;
+        progressBar.setValue(25);
         
+        
+        progressBar.setValue(30);
         if (empresaUpdate.getFtpServer().equals("") ||
                 empresaUpdate.getFtpUsername().equals("") ||
                 empresaUpdate.getFtpPassword().equals("") ||
@@ -94,7 +100,8 @@ public class Update {
             this.returnError(2);
             return false;
         }
-            
+        progressBar.setValue(50);
+        
         FTPmanager ftp = new FTPmanager(empresaUpdate.getFtpServer(), 
         empresaUpdate.getFtpPort(), empresaUpdate.getFtpUsername(), 
         empresaUpdate.getFtpPassword());
