@@ -143,10 +143,10 @@ public class Update {
             // reset result
             result = false;
             
-            // download XmlBinary.zip
+            // download XmlToBinary.zip
 
             result = ftp.downloadFile("/Empr"+empresaUpdate.getEnterprise() +
-                "/Software/compact/XmlBinary.zip", "temp/XmlBinary.zip");
+                "/Software/compact/XmlToBinary.zip", "temp/XmlToBinary.zip");
 
             if (result) {
                 System.out.println("Download ficheiro XmlBinary.zip com sucesso");
@@ -156,6 +156,7 @@ public class Update {
             result = false;
             
             // Backup old version
+            
             // copy to Sofware/old
             
             
