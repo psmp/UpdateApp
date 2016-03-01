@@ -5,9 +5,12 @@
  */
 package testes;
 
-import core.Files;
+import core.Filesmanager;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import static java.lang.System.exit;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  *
@@ -15,10 +18,18 @@ import java.io.IOException;
  */
 public class Filesmain {
     public static void main(String[] args) throws IOException {
-        Files file = new Files();
+        Filesmanager file = new Filesmanager();
         boolean folderExists;
         boolean fileExists;
         boolean result;
+        
+        String DATE_FORMAT_NOW = "yyyyMMdd_HHmmss";
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
+        System.out.println(sdf.format(cal.getTime()));
+        
+        exit(0);
+        
         
         String pasta1="/home/ami/ftp";
         folderExists = file.folderExists(pasta1);

@@ -61,6 +61,14 @@ public class FTPmain {
 		
 		ftp.downloadFile(downloadFile, dstfinal);
                 
+                boolean result = ftp.uploadFile("/home/psmp/ftp/teste.txt", "ftp/2/", "teste2u.txt");
+                if (result) {
+                    System.out.println("upload com sucesso");
+                }
+                else {
+                    System.out.println("upload SEM sucesso");
+                }
+                
                 //Desligar
 		System.out.println("Disconnecting...");
 		ftp.disconnect();

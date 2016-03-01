@@ -7,6 +7,7 @@ package interfacesUI;
 
 import core.Empresa;
 import core.FTPmanager;
+import core.Filesmanager;
 import exceptions.FTPException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -89,6 +90,7 @@ public class Update {
      */
     public boolean updateCompact(Empresa empresaUpdate, JProgressBar progressBar) {
         boolean result = false;
+        Filesmanager ficheiros = new Filesmanager();
         progressBar.setValue(25);
         
         
@@ -163,8 +165,31 @@ public class Update {
             result = false;
             
             // Backup old version
+
+            String fileOld = empresaUpdate.getCompact() + "dutyplan.zip";
+            String fileNew = empresaUpdate.getCompact() + "dutyplan.zip" +
+                    "_" + ficheiros.getDate() + ".old";
             
-            // copy to Sofware/old
+            if (ficheiros.renameFile(fileOld, fileNew)) {
+                System.out.println("Ficheiro dutyplan.zip renomeado");
+            }
+            // move to Sofware/old
+            result = ftp.uploadFile(fileNew, "Software/old", "dutyplan.zip" +
+                    "_" + ficheiros.getDate() + ".old");
+            if (result) {
+                System.out.println("Ficheiro upload com sucesso");
+                if (ficheiros.deleteFile(fileNew)) {
+                    System.out.println("Ficheiro old eliminado");
+                }
+                else {
+                    System.out.println("Ficheiro old NAO eliminado");
+                }
+            }
+            if (ficheiros.copyfile("temp/dutyplan.zip", fileOld)) {
+                System.out.println("Ficheiro dutyplan.zip copiado - actualizado");
+            }
+            
+            
             
             
 

@@ -12,6 +12,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.nio.file.Files;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -19,7 +22,7 @@ import java.util.zip.ZipInputStream;
  *
  * @author ami
  */
-public class Files {
+public class Filesmanager {
     
     private static final int BUFFER_SIZE = 4096;
     
@@ -123,5 +126,20 @@ public class Files {
             bos.write(bytesIn, 0, read);
         }
         bos.close();
+    }
+    
+    public boolean deleteFile (String path) {
+        File deleteF = new File(path);
+        if (deleteF.delete()) {
+            return true;
+        }
+        return false;
+    }
+    
+    public String getDate() {
+        String DATE_FORMAT_NOW = "yyyyMMdd_HHmmss";
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT_NOW);
+        return sdf.format(cal.getTime());
     }
 }

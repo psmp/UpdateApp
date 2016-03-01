@@ -19,6 +19,8 @@ import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
 
 import exceptions.FTPException; 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class FTPmanager {
 	private String server;
@@ -173,6 +175,33 @@ public class FTPmanager {
 		}
             return true;
 	}
+        
+        public boolean uploadFile (String org, String dstFolder, String dstFile) {
+            InputStream inputStream = null;
+            try {
+                // APPROACH #1: uploads first file using an InputStream
+                File firstLocalFile = new File(org);
+                ftp.changeWorkingDirectory(dstFolder);
+                inputStream = new FileInputStream(firstLocalFile);
+
+                boolean done = ftp.storeFile(dstFile, inputStream);
+                inputStream.close();
+                if (done) {
+                    return true;
+                }
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(FTPmanager.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(FTPmanager.class.getName()).log(Level.SEVERE, null, ex);
+            } finally {
+                try {
+                    inputStream.close();
+                } catch (IOException ex) {
+                    Logger.getLogger(FTPmanager.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            return false;
+        }
         
         public boolean checkFileExists (String filePath) throws IOException {
             InputStream inputStream = ftp.retrieveFileStream(filePath);
