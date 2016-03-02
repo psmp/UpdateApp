@@ -143,6 +143,9 @@ public class FTPmanager {
             try {
                 ftp.setFileType(FTP.BINARY_FILE_TYPE);
                 boolean result;
+                
+                System.out.println("filename: " + filename);
+                System.out.println("dstfinal: " + dstfinal);
 
                 OutputStream outputStream2 = new BufferedOutputStream(new FileOutputStream(dstfinal));
                 InputStream inputStream = ftp.retrieveFileStream(filename);

@@ -31,11 +31,12 @@ public class Update {
     // validar se a aplicação existe no posto local
     // validar acesso ao ftp
     public boolean validateUpdate(Empresa empresaUpdate, String application) {
+        String folder = null;
+        Path pathFolder;
+        
         if (empresaUpdate.getEnterprise() == 0) {
             return false;
         }
-        String folder = null;
-        Path pathFolder;
         
         switch (application) {
             case "compact":
@@ -91,10 +92,7 @@ public class Update {
     public boolean updateCompact(Empresa empresaUpdate, JProgressBar progressBar) {
         boolean result = false;
         Filesmanager ficheiros = new Filesmanager();
-        progressBar.setValue(25);
-        
-        
-        progressBar.setValue(30);
+
         if (empresaUpdate.getFtpServer().equals("") ||
                 empresaUpdate.getFtpUsername().equals("") ||
                 empresaUpdate.getFtpPassword().equals("") ||
@@ -102,39 +100,44 @@ public class Update {
             this.returnError(2);
             return false;
         }
-        progressBar.setValue(50);
         
         FTPmanager ftp = new FTPmanager(empresaUpdate.getFtpServer(), 
         empresaUpdate.getFtpPort(), empresaUpdate.getFtpUsername(), 
         empresaUpdate.getFtpPassword());
         
         try {
+            
             ftp.connection();
-            boolean result1 = ftp.checkFileExists("/Empr"+empresaUpdate.getEnterprise() +
+            boolean result1 = ftp.checkFileExists("Empr"+empresaUpdate.getEnterprise() +
                     "/Software/compact/dutyplan.zip");
-            boolean result2 = ftp.checkFileExists("/Empr"+empresaUpdate.getEnterprise() +
+            boolean result2 = ftp.checkFileExists("Empr"+empresaUpdate.getEnterprise() +
                     "/Software/compact/DUTYPLAN.zip");
             if (result1 || result2) {
                 result = true;
             }
+
             if (!result) {
                 return false;
             }
             
             // reset result
             result = false;
+            
             // download dutyplan.zip
             if (result1) {
-                result = ftp.downloadFile("/Empr"+empresaUpdate.getEnterprise() +
+                result = ftp.downloadFile("Empr"+empresaUpdate.getEnterprise() +
                     "/Software/compact/dutyplan.zip", "temp/dutyplan.zip");
             }
             if (result2) {
-                result = ftp.downloadFile("/Empr"+empresaUpdate.getEnterprise() +
+                result = ftp.downloadFile("Empr"+empresaUpdate.getEnterprise() +
                     "/Software/compact/DUTYPLAN.zip", "temp/dutyplan.zip");
             }
             
             if (result) {
                 System.out.println("Download ficheiro dutyplan.zip com sucesso");
+            }
+            else {
+                return false;
             }
             
             // reset result
@@ -142,7 +145,7 @@ public class Update {
             
             // download PassesBusiness.zip
 
-            result = ftp.downloadFile("/Empr"+empresaUpdate.getEnterprise() +
+            result = ftp.downloadFile("Empr"+empresaUpdate.getEnterprise() +
                 "/Software/compact/PassesBusiness.zip", "temp/PassesBusiness.zip");
 
             if (result) {
@@ -154,7 +157,7 @@ public class Update {
             
             // download XmlToBinary.zip
 
-            result = ftp.downloadFile("/Empr"+empresaUpdate.getEnterprise() +
+            result = ftp.downloadFile("Empr"+empresaUpdate.getEnterprise() +
                 "/Software/compact/XmlToBinary.zip", "temp/XmlToBinary.zip");
 
             if (result) {
@@ -167,15 +170,15 @@ public class Update {
             // Backup old version
 
             String fileOld = empresaUpdate.getCompact() + "dutyplan.zip";
-            String fileNew = empresaUpdate.getCompact() + "dutyplan.zip" +
-                    "_" + ficheiros.getDate() + ".old";
+            String sufixFile = "dutyplan.zip" + "_" + ficheiros.getDate() + ".old";
+            String fileNew = empresaUpdate.getCompact() + sufixFile;
+            
             
             if (ficheiros.renameFile(fileOld, fileNew)) {
                 System.out.println("Ficheiro dutyplan.zip renomeado");
             }
             // move to Sofware/old
-            result = ftp.uploadFile(fileNew, "Software/old", "dutyplan.zip" +
-                    "_" + ficheiros.getDate() + ".old");
+            result = ftp.uploadFile(fileNew, "Software/old", sufixFile);
             if (result) {
                 System.out.println("Ficheiro upload com sucesso");
                 if (ficheiros.deleteFile(fileNew)) {

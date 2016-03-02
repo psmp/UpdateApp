@@ -34,6 +34,7 @@ public class ConfigXML extends javax.swing.JInternalFrame {
         initComponents();
         try {
             XMLmanager configxml = new XMLmanager();
+            jB_compact.setEnabled(false);
             
             
             Document doc;
@@ -215,6 +216,7 @@ public class ConfigXML extends javax.swing.JInternalFrame {
                 System.out.println("Empresa selecionada");
                 System.out.println("Nome: " + empresaSelected.getName());
                 System.out.println("Numero: " + empresaSelected.getEnterprise());
+                jB_compact.setEnabled(true);
             }
         }
         else {System.out.println("Empresa NÃO selecionada");}
@@ -226,7 +228,8 @@ public class ConfigXML extends javax.swing.JInternalFrame {
     private void jB_compactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_compactActionPerformed
         // TODO add your handling code here:
         jPB_compact.setStringPainted(true);
-        updateApp.updateCompact(empresaSelected, jPB_compact);
+        boolean result = updateApp.updateCompact(empresaSelected, jPB_compact);
+        System.out.println("Resultado: " +result);
     }//GEN-LAST:event_jB_compactActionPerformed
 
 
