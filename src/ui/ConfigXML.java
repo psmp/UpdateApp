@@ -228,8 +228,9 @@ public class ConfigXML extends javax.swing.JInternalFrame {
     private void jB_compactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_compactActionPerformed
         // TODO add your handling code here:
         jPB_compact.setStringPainted(true);
-        boolean result = updateApp.updateCompact(empresaSelected, jPB_compact);
-        System.out.println("Resultado: " +result);
+        int result = updateApp.updateCompact(empresaSelected, jPB_compact);
+        System.out.println("Resultado: " + updateApp.returnErrors(result) + " Res: "+ result);
+
     }//GEN-LAST:event_jB_compactActionPerformed
 
 
