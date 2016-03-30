@@ -124,12 +124,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="560" max="32767" attributes="0"/>
+          <Component id="desktopPane" pref="632" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="desktopPane" pref="362" max="32767" attributes="0"/>
+          <Component id="desktopPane" pref="407" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -157,7 +157,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="178" max="32767" attributes="0"/>
+                      <EmptySpace pref="214" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="jBlogin" min="-2" max="-2" attributes="0"/>
@@ -175,14 +175,14 @@
                               <Component id="jPassword" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="212" max="32767" attributes="0"/>
+                      <EmptySpace pref="248" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="103" max="32767" attributes="0"/>
+                      <EmptySpace pref="126" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLusername" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTusername" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -197,7 +197,7 @@
                           <Component id="jBlogin" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jBcancel" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="128" max="32767" attributes="0"/>
+                      <EmptySpace pref="150" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

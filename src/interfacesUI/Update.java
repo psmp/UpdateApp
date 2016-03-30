@@ -17,6 +17,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JProgressBar;
+import javax.swing.JTextArea;
 import ui.ConfigXML;
 
 
@@ -89,7 +90,12 @@ public class Update {
      * @param empresaUpdate
      * @return 
      */
-    public int updateCompact(Empresa empresaUpdate, JProgressBar progressBar) {
+    public int updateCompact(Empresa empresaUpdate, JTextArea logArea) {
+        /**
+         * ver link
+         * http://www.java2s.com/Code/Java/Swing-JFC/AdemonstrationoftheJProgressBarcomponent.htm
+         */
+        logArea.append("Linha inicial \n");
         boolean result = false;
         Filesmanager ficheiros = new Filesmanager();
 
@@ -100,13 +106,19 @@ public class Update {
             this.returnError(2);
             return 4;
         }
+        logArea.append("Linha depois FTP \n");
         
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Update.class.getName()).log(Level.SEVERE, null, ex);
+        }
         FTPmanager ftp = new FTPmanager(empresaUpdate.getFtpServer(), 
         empresaUpdate.getFtpPort(), empresaUpdate.getFtpUsername(), 
         empresaUpdate.getFtpPassword());
         
         try {
-            
+            logArea.append("Linha 1");
             ftp.connection();
             /*
              * Verificar ficheiros antes de download
@@ -172,7 +184,7 @@ public class Update {
             
             // reset result
             result = false;
-            
+            logArea.append("Linha 2");
             /*
              * Renomear ficheiros antigos
              * Envio ficheiros antigos para ftp
@@ -201,7 +213,7 @@ public class Update {
             if (ficheiros.copyfile("temp/dutyplan.zip", fileOld)) {
                 System.out.println("Ficheiro dutyplan.zip copiado - actualizado");
             }
-            
+            logArea.append("Linha 3");
             /* passesbusiness */
             /* xmltobinary */
 
